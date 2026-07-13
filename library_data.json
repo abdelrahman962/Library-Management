@@ -6,7 +6,7 @@
             "author": "Harper Lee",
             "category": "Fiction",
             "publishYear": 1960,
-            "isAvailable": true
+            "isAvailable": false
         },
         {
             "id": 2,
@@ -28,7 +28,7 @@
             "id": 4,
             "title": "The Great Gatsby",
             "author": "F. Scott Fitzgerald",
-            "category": "Classic",
+            "category": "Adventure",
             "publishYear": 1925,
             "isAvailable": true
         }
@@ -44,7 +44,9 @@
             "id": 2,
             "name": "Omar",
             "email": "omar@gmail.com",
-            "borrowedBookIds": []
+            "borrowedBookIds": [
+                1
+            ]
         }
     ]
 }

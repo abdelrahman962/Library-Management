@@ -47,13 +47,12 @@ public function searchBookByTitle($title){
 }
 public function searchBookByCategory($category){
     
-$res=[];
 foreach($this->books as $b){
         if($b->getCategory()==$category){
-            $res[]=$b;
+            return $b;
         }
     }
-    return $res;
+    return NULL;
     
 }
 

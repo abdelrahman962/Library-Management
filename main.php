@@ -11,7 +11,7 @@ $bookSeeds = [
     new Book(1, "To Kill a Mockingbird", "Harper Lee", "Fiction", 1960),
     new Book(2, "Pride and Prejudice", "Jane Austen", "Classic", 1813),
     new Book(3, "The Hobbit", "J.R.R. Tolkien", "Fantasy", 1937),
-    new Book(4, "The Great Gatsby", "F. Scott Fitzgerald", "Classic", 1925)
+    new Book(4, "The Great Gatsby", "F. Scott Fitzgerald", "Adventure", 1925)
 ];
 
 foreach ($bookSeeds as $book) {
@@ -59,18 +59,21 @@ echo "\nMember borrowed books after return:\n";
 foreach ($member1->getBorrowedBooks() as $borrowedBook) {
     $borrowedBook->getInfo();
 }
+
+
+$bookToBorrow=$lib->searchBookByCategory("Fiction");
 $member2=$lib->getMemberById(2);
 if ($bookToBorrow && $member2->borrowBook($bookToBorrow)) {
     echo "Book borrowed successfully.\n";
 } else {
     echo "Book could not be borrowed.\n";
 }
-echo "\nReturning :\n";
-if ($bookToBorrow && $member2->returnBook($bookToBorrow)) {
-    echo "Book returned successfully.\n";
-} else {
-    echo "Book could not be returned.\n";
-}
+// echo "\nReturning :\n";
+// if ($bookToBorrow && $member2->returnBook($bookToBorrow)) {
+//     echo "Book returned successfully.\n";
+// } else {
+//     echo "Book could not be returned.\n";
+// }
 $lib->saveToJson($dataFile);
 
 
